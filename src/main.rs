@@ -1765,19 +1765,13 @@ path_xmr: {:#?}\n
 						// Display [Gupax] banner
 						let link_width = width/15.0;
 						self.img.banner.show_max_size(ui, Vec2::new(width, height*3.0));
-						ui.add_sized([width, height], Label::new("Gupax is a cross-platform GUI for mining"));
-						ui.add_sized([link_width, height], Hyperlink::from_label_and_url("[Monero]", "https://www.github.com/monero-project/monero"));
-						ui.add_sized([width, height], Label::new("on"));
-						ui.add_sized([link_width, height], Hyperlink::from_label_and_url("[P2Pool]", "https://www.github.com/SChernykh/p2pool"));
-						ui.add_sized([width, height], Label::new("using"));
-						ui.add_sized([link_width, height], Hyperlink::from_label_and_url("[XMRig]", "https://www.github.com/xmrig/xmrig"));
-
 						ui.add_space(SPACE*3.0);
+						ui.add_sized([width, height], Label::new("Gupax is a cross-platform GUI for mining Monero on P2Pool using XMRig."));
+						ui.add_space(SPACE*12.0);
 						ui.style_mut().override_text_style = Some(Monospace);
 						ui.add_sized([width, height], Label::new(KEYBOARD_SHORTCUTS));
 						ui.style_mut().override_text_style = Some(Body);
 						ui.add_space(SPACE*3.0);
-
 						ui.add_sized([width, height], Label::new("egui is licensed under MIT & Apache-2.0"));
 						ui.add_sized([width, height], Label::new("Gupax, P2Pool, and XMRig are licensed under GPLv3"));
 						if cfg!(debug_assertions) { ui.label(format!("Gupax is running in debug mode - {}", self.now.elapsed().as_secs_f64())); }
