@@ -1436,12 +1436,12 @@ impl eframe::App for App {
 					#[cfg(target_os = "windows")]
 					if self.admin {
 						ui.add_sized([width, height], Label::new(self.os));
+						ui.separator();
 					} else {
 						ui.add_sized([width, height], Label::new(RichText::new(self.os).color(RED))).on_hover_text(WINDOWS_NOT_ADMIN);
+						ui.separator();
 					}
-					#[cfg(target_family = "unix")]
-					ui.add_sized([width, height], Label::new(self.os));
-					ui.separator();
+
 					// [P2Pool/XMRig] Status
 					use ProcessState::*;
 					match p2pool_state {
